@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https:\\kit.fontawesome.com/ea6d4fec5e.js" crossorigin=
+	"anonymous"></script>
+	
+	<style type="text/css">
+		.but{
+			background-color:lime ;
+			padding: 0.2%;
+			font-size: 1rem;
+			border-radius: 5px;
+		}
+		#new{
+			padding: 0.2%;
+			font-size: 1rem;
+			border-radius: 5px;
+			background-color:lightsalmon ;
+			color: Black
+
+		}
+		.sp{
+			background-color:green;
+			color: white;
+			border: 7px;
+			font-size: 1rem;
+		}
+		.text{
+			border: 2px;
+			margin: 2% 5% 6% 2%;
+		}
+		body{
+			background-image:url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v960-ning-30.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=63dd5f402645ef52fb7dfb592aec765a") ;
+			background-repeat: no-repeat;
+			background-size: 100%;
+
+		}
+		.listtype{
+			list-style: none;
+		}
+	</style>
+		
+	
+</head>
+<body>
+	<input id="new" type="text" placeholder="Enter a message"/>
+	<ul>
+	</ul>
+	<button class="but" onclick="todo()">Submit</button>
+	<script type="text/javascript">
+		function todo(){
+			let newtodo=document.getElementById("new").value,todolist=[]
+			if(newtodo===""){
+				alert("Enter a todo value")
+			}
+			//console.log(newtodo)
+			todolist.push(newtodo)
+			console.log(todolist);
+			add(newtodo)
+			document.getElementById("new").value=""
+		}
+		function add(newvalue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			li.innerHTML=`
+			<span class="sp">${newvalue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>
+			`
+			li.classList.add("listtype")
+			ul.appendChild(li)
+		}
+	</script>
+</body>
+</html>
